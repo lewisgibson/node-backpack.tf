@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+node_js:
+    - lts/*
+    - node
+cache: npm
+before_install:
+    - npm update
+install:
+    - npm install
+script:
+    - npm run build
+    - npm run coveralls
+
+jobs:
+    include:
+        - stage: npm release
+            node_js: node
+            script: npm publish
+            deploy:
+                provider: npm
+                email: lewis-gibson@hotmail.com
+                api_key: $NPM_TOKEN
