@@ -1,4 +1,3 @@
-import Axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import SimpleOAuth2 from 'simple-oauth2';
 
 export interface ISessionResponse {
@@ -8,18 +7,6 @@ export interface ISessionResponse {
 export default class OAuth {
     private OAuthClient!: SimpleOAuth2.OAuthClient;
     private Base64Regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
-
-    /**
-     * Internal Request Type Wrapping.
-     */
-    private MakeRequest = async <T>(ReqOptions: AxiosRequestConfig, Token?: SimpleOAuth2.AccessToken) => {
-        const Response: AxiosResponse<T> = await Axios({
-            ...ReqOptions,
-            ...(Token !== undefined && { headers: { code: Token } }),
-        });
-
-        return Response.data;
-    };
 
     /**
      * Initialises an OAuth Client.

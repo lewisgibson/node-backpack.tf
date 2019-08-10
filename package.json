@@ -1,6 +1,6 @@
 {
     "name": "node-backpack.tf",
-    "version": "1.1.2",
+    "version": "2.0.0",
     "description": "A TypeScript + Async/Await driven Node SDK for https://backpack.tf/",
     "author": "Lewis Gibson <lewis-gibson@hotmail.com>",
     "license": "MIT",

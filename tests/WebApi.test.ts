@@ -18,7 +18,7 @@ describe('WebApi Class', () => {
     });
 
     test('Valid API Key', () => {
-        expect(() => new BackpackTF.WebApi(MockKey)).not.toThrow();
+        expect(() => new BackpackTF.WebApi(process.env.ApiKey as string)).not.toThrow();
     });
 
     /**
