@@ -41,7 +41,7 @@ const DefaultSearchListingOpts: ISearchListingOpts = {
     page_size: 10,
 };
 
-class Legacy {
+export class Legacy {
     private Token: string;
 
     /**
@@ -88,9 +88,10 @@ export default class WebApi {
 
     public constructor(private Key: string, private Token?: string) {
         if (typeof Key !== 'string' || Key.length < 24 || Key.match(/^[a-z0-9]{24}$/) === null) throw new Error('Invalid API Key');
-
-        if (typeof Token !== 'string' || Token.length < 24 || Token.match(/^[a-z0-9]{24}$/) === null) throw new Error('Invalid Token');
-        else this.Legacy.SetToken(Token);
+        if (Token !== undefined) {
+            if (typeof Token !== 'string' || Token.length < 24 || Token.match(/^[a-z0-9]{24}$/) === null) throw new Error('Invalid Token');
+            else this.Legacy.SetToken(Token);
+        }
     }
 
     //#region Economy

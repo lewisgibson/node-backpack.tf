@@ -3,7 +3,7 @@ declare enum Universe {
     PUBLIC = 1,
     BETA = 2,
     INTERNAL = 3,
-    DEV = 4
+    DEV = 4,
 }
 
 declare enum Type {
@@ -17,14 +17,14 @@ declare enum Type {
     CLAN = 7,
     CHAT = 8,
     P2P_SUPER_SEEDER = 9,
-    ANON_USER = 10
+    ANON_USER = 10,
 }
 
 declare enum Instance {
     ALL = 0,
     DESKTOP = 1,
     CONSOLE = 2,
-    WEB = 4
+    WEB = 4,
 }
 
 declare type Parseable = string | number;

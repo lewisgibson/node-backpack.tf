@@ -1,10 +1,5 @@
-export { default as WebApi } from './WebApi';
-export { default as OAuth } from './OAuth';
-
-import WebApi from './WebApi';
+import WebApi, { Legacy } from './WebApi';
 import OAuth from './OAuth';
 
-export default {
-    WebApi,
-    OAuth,
-};
+export { WebApi, Legacy, OAuth };
+export default { WebApi, Legacy, OAuth };

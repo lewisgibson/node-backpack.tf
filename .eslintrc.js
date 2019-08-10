@@ -30,7 +30,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: './tests/**/*',
+            files: './__tests__/**/*',
             env: {
                 'jest/globals': true,
             },

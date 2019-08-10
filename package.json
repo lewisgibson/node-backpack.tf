@@ -1,6 +1,6 @@
 {
     "name": "node-backpack.tf",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "A TypeScript + Async/Await driven Node SDK for https://backpack.tf/",
     "author": "Lewis Gibson <lewis-gibson@hotmail.com>",
     "license": "MIT",
@@ -51,6 +51,7 @@
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.0",
+        "husky": "^3.0.3",
         "jest": "^24.8.0",
         "prettier": "^1.18.2",
         "rimraf": "^2.6.3",

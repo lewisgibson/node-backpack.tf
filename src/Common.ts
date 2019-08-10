@@ -1,5 +1,7 @@
 import { AccessToken } from 'simple-oauth2';
 import Axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Tradable, Craftable } from './Types/Static';
 
 /**
