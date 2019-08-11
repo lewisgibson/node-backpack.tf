@@ -76,7 +76,9 @@ export type IGetPriceHistory = WebAPICommon<{
  * API response for GET api/IGetPrices/v4
  */
 export type IGetPrices = WebAPICommon<
-    Record<string, Models.IItemRecord>,
+    {
+        items: Record<string, Models.IItemRecord>;
+    },
     {
         /**
          * The USD value of the smallest currency (i.e. Refined Metal).
@@ -98,8 +100,10 @@ export type IGetPrices = WebAPICommon<
 /**
  * API response for GET api/IGetSpecialItems/v1
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type IGetSpecialItems = WebAPICommon<Record<string, any>>;
+export type IGetSpecialItems = WebAPICommon<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    items: Record<string, any>;
+}>;
 
 /**
  * API response for GET api/IGetUsers/v3
@@ -208,8 +212,10 @@ export type IGetListings<T extends boolean, U extends Static.EListingIntent> = W
 /**
  * API response for DELETE api/classifieds/listings/v1
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type IDeleteListings = WebAPICommon<Record<string, any>>;
+export type IDeleteListings = WebAPICommon<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: Record<string, any>;
+}>;
 
 /**
  * API response for POST api/classifieds/list/v1
