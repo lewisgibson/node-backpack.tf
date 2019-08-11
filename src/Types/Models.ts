@@ -67,14 +67,14 @@ export type IPrice<A extends boolean = false> = {
      * Upper bound value for the item. Only set if the item has a price range.
      */
     value_high?: number;
-} & A extends true
+} & (A extends true
     ? {
           /**
            * If set, item is an australium weapon.
            */
           australium: number;
       }
-    : {};
+    : {});
 
 export type IPriceEntry<Raw extends ERawType> = IPrice & RawPrice<Raw>;
 

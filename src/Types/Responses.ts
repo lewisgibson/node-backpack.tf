@@ -1,9 +1,14 @@
 import { Static, Models } from '.';
 
-export type UndefinedGateway<T, K, U> = T extends undefined ? K : U;
+type UndefinedGateway<T, K, U> = T extends undefined ? K : U;
+type Unbox<T, U> = U extends keyof T ? T[U] : never;
+type FilterUnion<T, K> = T extends K ? never : T;
+
 export interface ResponseWrapper<T> {
     response: T;
 }
+
+export type UnwrapWebAPI<T> = Omit<FilterUnion<Unbox<T, keyof ResponseWrapper<void>>, WebAPIError>, keyof WebAPIResponse<void>>;
 
 /**
  * Fallback when the request failed.
@@ -103,7 +108,7 @@ export type IGetUsers = WebAPICommon<{
     /**
      * An object keyed by SteamID64, that has a value of IPlayerRecord
      */
-    players: Record<ReturnType<SteamID['getSteamID64']>, Models.IPlayerRecord>;
+    players: Record<number, Models.IPlayerRecord>;
 }>;
 
 /**
