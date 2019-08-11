@@ -37,7 +37,7 @@ export interface HighRawItemPrice extends RawItemPrice {
 /**
  * Conditional wrapper for the enum
  */
-export type RawPrice<T extends ERawType> = T extends ERawType.Raw ? RawItemPrice : T extends ERawType.RawHigh ? HighRawItemPrice : never;
+export type RawPrice<T extends ERawType> = T extends ERawType.Raw ? RawItemPrice : T extends ERawType.RawHigh ? HighRawItemPrice : {};
 
 /**
  * Represents a pricing entry for an item or currency.
