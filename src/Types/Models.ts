@@ -611,7 +611,7 @@ export interface IClassifiedListing<T extends boolean = false, U extends Static.
     /**
      * If set, the listing is a Premium promoted listing.
      */
-    promoted?: IClassifiedListing<T, U>;
+    promoted?: boolean;
 }
 
 /**
