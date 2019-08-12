@@ -1,4 +1,4 @@
-require('dotenv').config({ path: require('path').join(__dirname, '../.env.test') });
+require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 
 import BackpackTF from '../src';
 import Crypto from 'crypto';

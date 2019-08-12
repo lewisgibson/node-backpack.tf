@@ -1,4 +1,4 @@
-require('dotenv').config({ path: require('path').join(__dirname, '../.env.test') });
+require('dotenv').config({ path: require('path').join(__dirname, '../.env') });
 
 import BackpackTF from '../src';
 import Crypto from 'crypto';
@@ -18,7 +18,7 @@ describe('WebApi Class', () => {
     });
 
     test('Valid API Key', () => {
-        expect(() => new BackpackTF.WebApi(process.env.ApiKey as string)).not.toThrow();
+        expect(() => new BackpackTF.WebApi(process.env.ApiKey as string, process.env.ApiToken as string)).not.toThrow();
     });
 
     /**
