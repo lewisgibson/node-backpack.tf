@@ -564,7 +564,7 @@ export interface IClassifiedListing<T extends boolean = false, U extends Static.
     /**
      * Which currencies the user is looking for. Uses backpack.tf internal currency names (e.g. metal).
      */
-    currencies: Static.Currencies;
+    currencies: Partial<Record<Static.Currencies, number>>;
 
     /**
      * Whether the user accepts trade offers or only adds for this listing.
